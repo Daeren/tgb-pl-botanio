@@ -5,6 +5,7 @@
 
     "homepage": "http://666.io",
     "keywords": [
+        "telegram-bot-api-c",
         "telegram",
         "plugin",
 		"botanio"
