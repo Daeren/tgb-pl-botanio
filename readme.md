@@ -15,8 +15,8 @@ srv.on("*", bot => { bot.data.text = "Hi"; bot.send(); });
 ```
 
 
-[telegram-bot-api-c][3]
-[Botan SDK][4]
+* [telegram-bot-api-c][3]
+* [Botan SDK][4]
 
 
 
