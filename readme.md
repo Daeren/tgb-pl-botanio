@@ -8,10 +8,12 @@ const rBot          = require("telegram-bot-api-c"),
 
 let bot = rBot("TOKEN")
     .polling()
-    .use(rTgbPlBotanio("apiKey1"))
-    .use(rTgbPlBotanio("apiKey2", "appName"));
 	
-bot.on("*", bot => { bot.data.text = "Hi"; bot.send(); });
+    .use(rTgbPlBotanio("apiKey1"))
+    .use(rTgbPlBotanio("apiKey2", "appName"))
+	
+    .use("text", (bot) => { bot.data.text = "Hi"; bot.send(); })
+    .use((type, bot) => {  });
 ```
 
 
