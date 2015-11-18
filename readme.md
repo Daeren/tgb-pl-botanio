@@ -12,7 +12,7 @@ let bot = rBot("TOKEN")
     .use(rTgbPlBotanio("apiKey1"))
     .use(rTgbPlBotanio("apiKey2", "appName"))
 	
-    .use("text", bot => { bot.data().text("Hi").send(); })
+    .use("text", (bot, next) => { bot.data().text("Hi").send(); })
     .use((type, bot) => {  });
 ```
 
