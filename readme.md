@@ -3,17 +3,20 @@ npm install tgb-pl-botanio
 ```
 
 ```js
-const rBot          = require("telegram-bot-api-c"),
-      rTgbPlBotanio = require("tgb-pl-botanio");
+const rTgBot        = require("telegram-bot-api-c"),
+      rTgPlBotanio  = require("tgb-pl-botanio");
 
-let bot = rBot("TOKEN")
+const gBot          = rTgBot("TOKEN");
+
+//--------------]>
+
+gBot
     .polling()
-	
-    .use(rTgbPlBotanio("apiKey1"))
-    .use(rTgbPlBotanio("apiKey2", "appName"))
-	
-    .use("text", (bot, next) => { bot.data().text("Hi").send(); })
-    .use((type, bot) => {  });
+
+    .use(rTgPlBotanio("apiKey1"))
+    .use(rTgPlBotanio("apiKey2", "appName"))
+
+    .use("text", bot => { bot.answer().text("Hi").send(); });
 ```
 
 

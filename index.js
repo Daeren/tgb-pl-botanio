@@ -18,9 +18,13 @@ module.exports = main;
 //-----------------------------------------------------
 
 function main(apiKey, appName) {
-    let objBotan = rBotan(apiKey);
+    const objBotan = rBotan(apiKey);
 
-    return function(type, bot) {
-        objBotan.track(bot.message, appName || "Telegram Bot");
+    return function(bot) {
+        const msg = bot.message;
+
+        if(msg) {
+            objBotan.track(msg, appName || "Telegram Bot");
+        }
     };
 }
